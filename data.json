@@ -1,0 +1,93 @@
+{
+  "cantanti": [
+    { "num": 1,  "nome": "DITONELLAPIAGA",             "canzone": "Che fastidio!",               "migliore": false },
+    { "num": 2,  "nome": "MICHELE BRAVI",               "canzone": "Prima o poi",                 "migliore": false },
+    { "num": 3,  "nome": "SAYF",                        "canzone": "Tu mi piaci tanto",            "migliore": true  },
+    { "num": 4,  "nome": "MARA SATTEI",                 "canzone": "Le cose che non sai di me",    "migliore": true  },
+    { "num": 5,  "nome": "DARGEN D'AMICO",              "canzone": "Ai Ai",                        "migliore": false },
+    { "num": 6,  "nome": "ARISA",                       "canzone": "Magica Favola",                "migliore": true  },
+    { "num": 7,  "nome": "LUCHÉ",                       "canzone": "Labirinto",                    "migliore": false },
+    { "num": 8,  "nome": "TOMMASO PARADISO",            "canzone": "I romantici",                  "migliore": false },
+    { "num": 9,  "nome": "ELETTRA LAMBORGHINI",         "canzone": "Voilà",                        "migliore": true  },
+    { "num": 10, "nome": "PATTY PRAVO",                 "canzone": "Opera",                        "migliore": false },
+    { "num": 11, "nome": "SAMURAI JAY",                 "canzone": "Ossessione",                   "migliore": false },
+    { "num": 12, "nome": "RAF",                         "canzone": "Ora e per sempre",             "migliore": false },
+    { "num": 13, "nome": "J-AX",                        "canzone": "Italia Starter Pack",          "migliore": false },
+    { "num": 14, "nome": "FULMINACCI",                  "canzone": "Stupida sfortuna",             "migliore": false },
+    { "num": 15, "nome": "LEVANTE",                     "canzone": "Sei tu",                       "migliore": false },
+    { "num": 16, "nome": "FEDEZ & MASINI",              "canzone": "Male necessario",              "migliore": false },
+    { "num": 17, "nome": "ERMAL META",                  "canzone": "Stella stellina",              "migliore": false },
+    { "num": 18, "nome": "SERENA BRANCALE",             "canzone": "Qui con me",                   "migliore": false },
+    { "num": 19, "nome": "NAYT",                        "canzone": "Prima che",                    "migliore": false },
+    { "num": 20, "nome": "MALIKA AYANE",                "canzone": "Animali notturni",             "migliore": false },
+    { "num": 21, "nome": "EDDIE BROCK",                 "canzone": "Avvoltoi",                     "migliore": false },
+    { "num": 22, "nome": "SAL DA VINCI",                "canzone": "Per sempre sì",                "migliore": true  },
+    { "num": 23, "nome": "ENRICO NIGIOTTI",             "canzone": "Ogni volta che non so volare", "migliore": false },
+    { "num": 24, "nome": "TREDICI PIETRO",              "canzone": "Uomo che cade",                "migliore": false },
+    { "num": 25, "nome": "CHIELLO",                     "canzone": "Ti penso sempre",              "migliore": false },
+    { "num": 26, "nome": "BAMBOLE DI PEZZA",            "canzone": "Resta con me",                 "migliore": false },
+    { "num": 27, "nome": "MARIA ANTONIETTA & COLOMBRE", "canzone": "La felicità e basta",          "migliore": false },
+    { "num": 28, "nome": "LEO GASSMANN",                "canzone": "Naturale",                     "migliore": false },
+    { "num": 29, "nome": "FRANCESCO RENGA",             "canzone": "Il meglio di me",              "migliore": false },
+    { "num": 30, "nome": "LDA & AKA 7EVEN",             "canzone": "Poesie Clandestine",           "migliore": false }
+  ],
+
+  "serate": [
+    { "n": 1, "label": "1ª Serata", "data": "Martedì 24 Feb" },
+    { "n": 2, "label": "2ª Serata", "data": "Mercoledì 25 Feb" },
+    { "n": 3, "label": "3ª Serata", "data": "Giovedì 26 Feb" },
+    { "n": 4, "label": "4ª Serata", "data": "Venerdì 27 Feb" },
+    { "n": 5, "label": "5ª Serata", "data": "Sabato 28 Feb" }
+  ],
+
+  "voti": {
+    "1":  { "1": { "v": 5, "c": "rosso" },        "2": null, "3": null, "4": null, "5": null },
+    "2":  { "1": { "v": 5, "c": "rosso" },        "2": null, "3": null, "4": null, "5": null },
+    "3":  { "1": { "v": 7, "c": "verde-chiaro" }, "2": null, "3": null, "4": null, "5": null },
+    "4":  { "1": { "v": 7, "c": "verde-chiaro" }, "2": null, "3": null, "4": null, "5": null },
+    "5":  { "1": { "v": 5, "c": "rosso" },        "2": null, "3": null, "4": null, "5": null },
+    "6":  { "1": { "v": 8, "c": "verde-chiaro" }, "2": null, "3": null, "4": null, "5": null },
+    "7":  { "1": { "v": 5, "c": "rosso" },        "2": null, "3": null, "4": null, "5": null },
+    "8":  { "1": { "v": 6, "c": "verde" },        "2": null, "3": null, "4": null, "5": null },
+    "9":  { "1": { "v": 7, "c": "grigio" },       "2": null, "3": null, "4": null, "5": null },
+    "10": { "1": { "v": 5, "c": "rosso" },        "2": null, "3": null, "4": null, "5": null },
+    "11": { "1": { "v": 6, "c": "grigio" },       "2": null, "3": null, "4": null, "5": null },
+    "12": { "1": { "v": 5, "c": "rosso" },        "2": null, "3": null, "4": null, "5": null },
+    "13": { "1": { "v": 7, "c": "verde-chiaro" }, "2": null, "3": null, "4": null, "5": null },
+    "14": { "1": { "v": 6, "c": "giallo" },       "2": null, "3": null, "4": null, "5": null },
+    "15": { "1": { "v": 5, "c": "rosso" },        "2": null, "3": null, "4": null, "5": null },
+    "16": { "1": { "v": 5, "c": "rosso" },        "2": null, "3": null, "4": null, "5": null },
+    "17": { "1": { "v": 6, "c": "grigio" },       "2": null, "3": null, "4": null, "5": null },
+    "18": { "1": { "v": 6, "c": "giallo" },       "2": null, "3": null, "4": null, "5": null },
+    "19": { "1": { "v": 6, "c": "verde" },        "2": null, "3": null, "4": null, "5": null },
+    "20": { "1": { "v": 6, "c": "verde" },        "2": null, "3": null, "4": null, "5": null },
+    "21": { "1": { "v": 5, "c": "rosso" },        "2": null, "3": null, "4": null, "5": null },
+    "22": { "1": { "v": 7, "c": "verde-chiaro" }, "2": null, "3": null, "4": null, "5": null },
+    "23": { "1": { "v": 5, "c": "rosso" },        "2": null, "3": null, "4": null, "5": null },
+    "24": { "1": { "v": 5, "c": "rosso" },        "2": null, "3": null, "4": null, "5": null },
+    "25": { "1": { "v": 5, "c": "rosso" },        "2": null, "3": null, "4": null, "5": null },
+    "26": { "1": { "v": 7, "c": "verde-chiaro" }, "2": null, "3": null, "4": null, "5": null },
+    "27": { "1": { "v": 5, "c": "rosso" },        "2": null, "3": null, "4": null, "5": null },
+    "28": { "1": { "v": 6, "c": "verde" },        "2": null, "3": null, "4": null, "5": null },
+    "29": { "1": { "v": 5, "c": "rosso" },        "2": null, "3": null, "4": null, "5": null },
+    "30": { "1": { "v": 6, "c": "verde" },        "2": null, "3": null, "4": null, "5": null }
+  },
+
+  "top5": {
+    "1": ["ARISA", "FULMINACCI", "SERENA BRANCALE", "DITONELLAPIAGA", "FEDEZ & MASINI"],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": []
+  },
+
+  "top5Info": {
+    "1": {
+      "ARISA":           { "match": true,  "nota": "Noi 8 — piena concordanza con la sala stampa!" },
+      "FULMINACCI":      { "match": true,  "nota": "Noi 6 giallo — voto in crescita, la stampa concorda" },
+      "SERENA BRANCALE": { "match": true,  "nota": "Noi 6 giallo — voto in crescita, la stampa concorda" },
+      "DITONELLAPIAGA":  { "match": false, "nota": "Noi 5 rosso — divergenza netta con la stampa!" },
+      "FEDEZ & MASINI":  { "match": false, "nota": "Noi 5 rosso — divergenza netta con la stampa!" }
+    }
+  }
+}

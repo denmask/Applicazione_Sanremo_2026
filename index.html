@@ -1,390 +1,46 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sanremo 2026 — La Nostra Giuria</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --blu: #0a1628;
-    --blu2: #0d2048;
-    --blu3: #1a3a6e;
-    --oro: #c9a227;
-    --oro2: #f0c040;
-    --bianco: #f0f4ff;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--blu);
-    color: var(--bianco);
-    font-family: 'Montserrat', sans-serif;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.6) 0%, transparent 100%),
-      radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.4) 0%, transparent 100%),
-      radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,0.5) 0%, transparent 100%),
-      radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
-      radial-gradient(1px 1px at 90% 30%, rgba(255,255,255,0.6) 0%, transparent 100%),
-      radial-gradient(1px 1px at 15% 85%, rgba(255,255,255,0.4) 0%, transparent 100%),
-      radial-gradient(1px 1px at 85% 55%, rgba(255,255,255,0.5) 0%, transparent 100%),
-      radial-gradient(2px 2px at 40% 40%, rgba(201,162,39,0.3) 0%, transparent 100%),
-      radial-gradient(2px 2px at 60% 70%, rgba(201,162,39,0.2) 0%, transparent 100%);
-    pointer-events: none;
-    z-index: 0;
-  }
-  header {
-    position: relative; z-index: 10; text-align: center;
-    padding: 40px 20px 30px;
-    background: linear-gradient(180deg, rgba(201,162,39,0.15) 0%, transparent 100%);
-    border-bottom: 1px solid rgba(201,162,39,0.3);
-  }
-  .header-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--oro), var(--oro2));
-    color: var(--blu);
-    font-family: 'Bebas Neue', cursive;
-    font-size: 13px; letter-spacing: 3px;
-    padding: 4px 16px; border-radius: 20px; margin-bottom: 10px;
-    animation: pulse-badge 2s ease-in-out infinite;
-  }
-  @keyframes pulse-badge {
-    0%,100% { box-shadow: 0 0 0 0 rgba(201,162,39,0.4); }
-    50% { box-shadow: 0 0 0 8px rgba(201,162,39,0); }
-  }
-  header h1 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: clamp(48px, 10vw, 90px);
-    letter-spacing: 6px; line-height: 1;
-    background: linear-gradient(135deg, #fff 0%, var(--oro2) 50%, #fff 100%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    animation: shimmer 3s linear infinite; background-size: 200% auto;
-  }
-  @keyframes shimmer { 0%{background-position:0% center} 100%{background-position:200% center} }
-  header p { font-size: 13px; color: rgba(240,244,255,0.6); letter-spacing: 2px; margin-top: 6px; text-transform: uppercase; }
-  .serate-nav {
-    position: relative; z-index: 10;
-    display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; padding: 20px 16px;
-  }
-  .serata-btn {
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);
-    color: rgba(240,244,255,0.7); font-family: 'Montserrat', sans-serif;
-    font-weight: 700; font-size: 12px; letter-spacing: 1px;
-    padding: 10px 20px; border-radius: 30px; cursor: pointer;
-    transition: all 0.3s ease; text-transform: uppercase;
-  }
-  .serata-btn:hover { background: rgba(201,162,39,0.15); border-color: var(--oro); color: var(--oro2); transform: translateY(-2px); }
-  .serata-btn.active {
-    background: linear-gradient(135deg, var(--oro), var(--oro2));
-    border-color: transparent; color: var(--blu);
-    box-shadow: 0 4px 20px rgba(201,162,39,0.4); transform: translateY(-2px);
-  }
-  .top5-btn {
-    background: linear-gradient(135deg, #1a3a8e, #2a5cd0);
-    border: 1px solid rgba(100,150,255,0.4); color: #fff;
-    font-family: 'Bebas Neue', cursive; font-size: 16px; letter-spacing: 2px;
-    padding: 10px 24px; border-radius: 30px; cursor: pointer; transition: all 0.3s ease;
-  }
-  .top5-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(42,92,208,0.5); }
-  .top5-btn.active { background: linear-gradient(135deg, #2a5cd0, #4a7de0); box-shadow: 0 4px 25px rgba(42,92,208,0.6); }
-  .serata-title { position: relative; z-index: 10; text-align: center; padding: 0 20px 20px; }
-  .serata-title h2 { font-family: 'Bebas Neue', cursive; font-size: clamp(28px,5vw,42px); letter-spacing: 4px; }
-  .serata-title span { color: var(--oro2); }
-  .serata-title p { font-size: 12px; color: rgba(240,244,255,0.5); letter-spacing: 2px; margin-top: 4px; }
-  .legenda {
-    position: relative; z-index: 10;
-    display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; padding: 0 20px 24px;
-  }
-  .leg-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: rgba(240,244,255,0.6); }
-  .leg-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
-  .cantanti-grid {
-    position: relative; z-index: 10;
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
-    gap: 12px; padding: 0 16px 40px; max-width: 1200px; margin: 0 auto;
-  }
-  .cantante-card {
-    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px; padding: 16px;
-    display: flex; align-items: center; gap: 14px;
-    cursor: pointer; transition: all 0.3s ease;
-    animation: fadeInCard 0.4s ease both; position: relative; overflow: hidden;
-  }
-  .cantante-card::before {
-    content:''; position:absolute; inset:0;
-    background: linear-gradient(135deg,transparent,rgba(255,255,255,0.02)); pointer-events:none;
-  }
-  @keyframes fadeInCard { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
-  .cantante-card:hover { background:rgba(255,255,255,0.08); border-color:rgba(201,162,39,0.3); transform:translateY(-3px); box-shadow:0 8px 30px rgba(0,0,0,0.3); }
-  .cantante-card.migliore { border-color:rgba(240,192,64,0.5); background:rgba(201,162,39,0.08); }
-  .cantante-card.migliore::after { content:'★'; position:absolute; top:8px; right:10px; color:var(--oro2); font-size:14px; }
-  .cantante-card.no-voto { opacity:0.6; }
-  .num-badge { font-family:'Bebas Neue',cursive; font-size:22px; color:rgba(240,244,255,0.25); min-width:30px; text-align:center; line-height:1; }
-  .cantante-info { flex:1; min-width:0; }
-  .cantante-nome { font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .cantante-nome.migliore-testo { color:var(--oro2); }
-  .cantante-canzone { font-size:12px; color:rgba(240,244,255,0.5); margin-top:3px; font-style:italic; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .voto-badge { min-width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',cursive; font-size:24px; flex-shrink:0; }
-  .voto-nd { background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.3); font-size:14px; font-family:'Montserrat',sans-serif; font-weight:300; }
-  .voto-rosso { background:#c0392b; color:#fff; }
-  .voto-verde-chiaro { background:#a8e6cf; color:#1a5236; }
-  .voto-verde { background:#27ae60; color:#fff; }
-  .voto-grigio { background:#7f8c8d; color:#fff; }
-  .voto-giallo { background:#e6a817; color:#1a0f00; }
-  .top5-section { position:relative; z-index:10; max-width:800px; margin:0 auto; padding:0 16px 60px; animation:fadeInCard 0.4s ease; }
-  .top5-header { text-align:center; margin-bottom:30px; }
-  .top5-header h2 { font-family:'Bebas Neue',cursive; font-size:clamp(36px,7vw,64px); letter-spacing:6px; line-height:1; }
-  .top5-header h2 span { color:var(--oro2); }
-  .top5-header p { font-size:11px; letter-spacing:3px; color:rgba(240,244,255,0.5); margin-top:8px; text-transform:uppercase; }
-  .top5-serata { margin-bottom:32px; }
-  .top5-serata-title { font-family:'Bebas Neue',cursive; font-size:22px; letter-spacing:3px; color:var(--oro2); border-bottom:1px solid rgba(201,162,39,0.3); padding-bottom:8px; margin-bottom:14px; }
-  .top5-items { display:flex; flex-direction:column; gap:10px; }
-  .top5-item { display:flex; align-items:center; gap:14px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:14px 18px; animation:fadeInCard 0.4s ease both; transition:all 0.3s; }
-  .top5-item:hover { background:rgba(255,255,255,0.08); border-color:rgba(201,162,39,0.3); transform:translateX(4px); }
-  .top5-rank { font-family:'Bebas Neue',cursive; font-size:32px; color:var(--oro2); min-width:30px; text-align:center; line-height:1; }
-  .top5-nome { font-weight:700; font-size:15px; text-transform:uppercase; letter-spacing:1px; flex:1; }
-  .top5-item.nd .top5-nome { color:rgba(240,244,255,0.3); font-style:italic; font-weight:300; text-transform:none; letter-spacing:0; font-size:13px; }
-  .top5-item-meta { display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
-  .match-pill { font-size:10px; font-weight:700; letter-spacing:1px; padding:3px 10px; border-radius:20px; text-transform:uppercase; white-space:nowrap; }
-  .match-yes { background:rgba(39,174,96,0.2); color:#2ecc71; border:1px solid rgba(39,174,96,0.3); }
-  .match-no { background:rgba(192,57,43,0.2); color:#e74c3c; border:1px solid rgba(192,57,43,0.3); }
-  .top5-nota { font-size:10px; color:rgba(240,244,255,0.35); font-style:italic; text-align:right; }
-  .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:100; align-items:center; justify-content:center; backdrop-filter:blur(4px); }
-  .modal-overlay.show { display:flex; animation:fadeModal 0.3s ease; }
-  @keyframes fadeModal { from{opacity:0} to{opacity:1} }
-  .modal { background:var(--blu2); border:1px solid rgba(201,162,39,0.4); border-radius:20px; padding:28px; max-width:440px; width:90%; animation:slideModal 0.3s ease; position:relative; max-height:80vh; overflow-y:auto; }
-  @keyframes slideModal { from{transform:scale(0.9) translateY(20px);opacity:0} to{transform:scale(1) translateY(0);opacity:1} }
-  .modal-close { position:absolute; top:14px; right:16px; background:rgba(255,255,255,0.1); border:none; color:var(--bianco); width:28px; height:28px; border-radius:50%; cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center; transition:background 0.2s; }
-  .modal-close:hover { background:rgba(255,255,255,0.2); }
-  .modal h3 { font-family:'Bebas Neue',cursive; font-size:26px; letter-spacing:3px; color:var(--oro2); margin-bottom:4px; }
-  .modal .modal-canzone { font-size:13px; color:rgba(240,244,255,0.5); font-style:italic; margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.1); }
-  .modal-voti { display:flex; flex-direction:column; gap:10px; }
-  .modal-voto-row { display:flex; align-items:center; justify-content:space-between; }
-  .modal-serata-label { font-size:12px; letter-spacing:1px; text-transform:uppercase; color:rgba(240,244,255,0.6); }
-  .modal-voto-display { font-family:'Bebas Neue',cursive; font-size:20px; min-width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; }
-  footer { position:relative; z-index:10; text-align:center; padding:20px; border-top:1px solid rgba(255,255,255,0.06); color:rgba(240,244,255,0.3); font-size:11px; letter-spacing:1px; }
-  ::-webkit-scrollbar { width:6px; }
-  ::-webkit-scrollbar-track { background:var(--blu); }
-  ::-webkit-scrollbar-thumb { background:var(--blu3); border-radius:3px; }
-  @media(max-width:500px) { .cantanti-grid{grid-template-columns:1fr} .serata-btn{padding:8px 14px;font-size:11px} }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanremo 2026 — La Nostra Giuria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <div class="header-badge">🎤 Festival della Canzone Italiana</div>
-  <h1>Sanremo 2026</h1>
-  <p>La nostra giuria • Teatro Ariston • 24–28 Febbraio</p>
-</header>
+  <header>
+    <div class="header-badge">🎤 Festival della Canzone Italiana</div>
+    <h1>Sanremo 2026</h1>
+    <p>La nostra giuria • Teatro Ariston • 24–28 Febbraio</p>
+  </header>
 
-<div class="serate-nav" id="serateNav"></div>
-<div class="serata-title" id="serataTitle"></div>
+  <div class="serate-nav" id="serateNav"></div>
+  <div class="serata-title" id="serataTitle"></div>
 
-<div class="legenda" id="legenda">
-  <div class="leg-item"><div class="leg-dot" style="background:#c0392b"></div>Insufficienza non migliorabile</div>
-  <div class="leg-item"><div class="leg-dot" style="background:#a8e6cf"></div>Voto fisso confermato</div>
-  <div class="leg-item"><div class="leg-dot" style="background:#27ae60"></div>6 a rischio (può diventare 5)</div>
-  <div class="leg-item"><div class="leg-dot" style="background:#7f8c8d"></div>Rivalutabile (su o giù)</div>
-  <div class="leg-item"><div class="leg-dot" style="background:#e6a817"></div>Voto in crescita (solo verso l'alto)</div>
-</div>
-
-<div class="cantanti-grid" id="cantantiGrid"></div>
-<div class="top5-section" id="top5Section" style="display:none"></div>
-
-<footer>Sanremo 2026 • La Nostra Giuria Privata • Powered with ❤️</footer>
-
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <h3 id="modalNome"></h3>
-    <div class="modal-canzone" id="modalCanzone"></div>
-    <div class="modal-voti" id="modalVoti"></div>
+  <div class="legenda" id="legenda">
+    <div class="leg-item"><div class="leg-dot" style="background:#c0392b"></div>Insufficienza non migliorabile</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#a8e6cf"></div>Voto fisso confermato</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#27ae60"></div>6 a rischio (può diventare 5)</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#7f8c8d"></div>Rivalutabile (su o giù)</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#e6a817"></div>Voto in crescita (solo verso l'alto)</div>
   </div>
-</div>
 
-<script>
-const cantanti = [
-  { num:1,  nome:"DITONELLAPIAGA",             canzone:"Che fastidio!",                migliore:false },
-  { num:2,  nome:"MICHELE BRAVI",               canzone:"Prima o poi",                  migliore:false },
-  { num:3,  nome:"SAYF",                        canzone:"Tu mi piaci tanto",             migliore:true  },
-  { num:4,  nome:"MARA SATTEI",                 canzone:"Le cose che non sai di me",     migliore:true  },
-  { num:5,  nome:"DARGEN D'AMICO",              canzone:"Ai Ai",                         migliore:false },
-  { num:6,  nome:"ARISA",                       canzone:"Magica Favola",                 migliore:true  },
-  { num:7,  nome:"LUCHÉ",                       canzone:"Labirinto",                     migliore:false },
-  { num:8,  nome:"TOMMASO PARADISO",            canzone:"I romantici",                   migliore:false },
-  { num:9,  nome:"ELETTRA LAMBORGHINI",         canzone:"Voilà",                         migliore:true  },
-  { num:10, nome:"PATTY PRAVO",                 canzone:"Opera",                         migliore:false },
-  { num:11, nome:"SAMURAI JAY",                 canzone:"Ossessione",                    migliore:false },
-  { num:12, nome:"RAF",                         canzone:"Ora e per sempre",              migliore:false },
-  { num:13, nome:"J-AX",                        canzone:"Italia Starter Pack",           migliore:false },
-  { num:14, nome:"FULMINACCI",                  canzone:"Stupida sfortuna",              migliore:false },
-  { num:15, nome:"LEVANTE",                     canzone:"Sei tu",                        migliore:false },
-  { num:16, nome:"FEDEZ & MASINI",              canzone:"Male necessario",               migliore:false },
-  { num:17, nome:"ERMAL META",                  canzone:"Stella stellina",               migliore:false },
-  { num:18, nome:"SERENA BRANCALE",             canzone:"Qui con me",                    migliore:false },
-  { num:19, nome:"NAYT",                        canzone:"Prima che",                     migliore:false },
-  { num:20, nome:"MALIKA AYANE",                canzone:"Animali notturni",              migliore:false },
-  { num:21, nome:"EDDIE BROCK",                 canzone:"Avvoltoi",                      migliore:false },
-  { num:22, nome:"SAL DA VINCI",                canzone:"Per sempre sì",                 migliore:true  },
-  { num:23, nome:"ENRICO NIGIOTTI",             canzone:"Ogni volta che non so volare",  migliore:false },
-  { num:24, nome:"TREDICI PIETRO",              canzone:"Uomo che cade",                 migliore:false },
-  { num:25, nome:"CHIELLO",                     canzone:"Ti penso sempre",               migliore:false },
-  { num:26, nome:"BAMBOLE DI PEZZA",            canzone:"Resta con me",                  migliore:false },
-  { num:27, nome:"MARIA ANTONIETTA & COLOMBRE", canzone:"La felicità e basta",           migliore:false },
-  { num:28, nome:"LEO GASSMANN",                canzone:"Naturale",                      migliore:false },
-  { num:29, nome:"FRANCESCO RENGA",             canzone:"Il meglio di me",               migliore:false },
-  { num:30, nome:"LDA & AKA 7EVEN",             canzone:"Poesie Clandestine",            migliore:false },
-];
+  <div class="cantanti-grid" id="cantantiGrid"></div>
+  <div class="top5-section" id="top5Section" style="display:none"></div>
 
-const voti = {
-  1:  {1:{v:5,c:'rosso'},        2:null,3:null,4:null,5:null},
-  2:  {1:{v:5,c:'rosso'},        2:null,3:null,4:null,5:null},
-  3:  {1:{v:7,c:'verde-chiaro'}, 2:null,3:null,4:null,5:null},
-  4:  {1:{v:7,c:'verde-chiaro'}, 2:null,3:null,4:null,5:null},
-  5:  {1:{v:5,c:'rosso'},        2:null,3:null,4:null,5:null},
-  6:  {1:{v:8,c:'verde-chiaro'}, 2:null,3:null,4:null,5:null},
-  7:  {1:{v:5,c:'rosso'},        2:null,3:null,4:null,5:null},
-  8:  {1:{v:6,c:'verde'},        2:null,3:null,4:null,5:null},
-  9:  {1:{v:7,c:'grigio'},       2:null,3:null,4:null,5:null},
-  10: {1:{v:5,c:'rosso'},        2:null,3:null,4:null,5:null},
-  11: {1:{v:6,c:'grigio'},       2:null,3:null,4:null,5:null},
-  12: {1:{v:5,c:'rosso'},        2:null,3:null,4:null,5:null},
-  13: {1:{v:7,c:'verde-chiaro'}, 2:null,3:null,4:null,5:null},
-  14: {1:{v:6,c:'giallo'},       2:null,3:null,4:null,5:null},
-  15: {1:{v:5,c:'rosso'},        2:null,3:null,4:null,5:null},
-  16: {1:{v:5,c:'rosso'},        2:null,3:null,4:null,5:null},
-  17: {1:{v:6,c:'grigio'},       2:null,3:null,4:null,5:null},
-  18: {1:{v:6,c:'giallo'},       2:null,3:null,4:null,5:null},
-  19: {1:{v:6,c:'verde'},        2:null,3:null,4:null,5:null},
-  20: {1:{v:6,c:'verde'},        2:null,3:null,4:null,5:null},
-  21: {1:{v:5,c:'rosso'},        2:null,3:null,4:null,5:null},
-  22: {1:{v:7,c:'verde-chiaro'}, 2:null,3:null,4:null,5:null},
-  23: {1:{v:5,c:'rosso'},        2:null,3:null,4:null,5:null},
-  24: {1:{v:5,c:'rosso'},        2:null,3:null,4:null,5:null},
-  25: {1:{v:5,c:'rosso'},        2:null,3:null,4:null,5:null},
-  26: {1:{v:7,c:'verde-chiaro'}, 2:null,3:null,4:null,5:null},
-  27: {1:{v:5,c:'rosso'},        2:null,3:null,4:null,5:null},
-  28: {1:{v:6,c:'verde'},        2:null,3:null,4:null,5:null},
-  29: {1:{v:5,c:'rosso'},        2:null,3:null,4:null,5:null},
-  30: {1:{v:6,c:'verde'},        2:null,3:null,4:null,5:null},
-};
+  <footer>Sanremo 2026 • La Nostra Giuria Privata • Powered with ❤️</footer>
 
-const top5 = {
-  1:["ARISA","FULMINACCI","SERENA BRANCALE","DITONELLAPIAGA","FEDEZ & MASINI"],
-  2:[],3:[],4:[],5:[],
-};
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h3 id="modalNome"></h3>
+      <div class="modal-canzone" id="modalCanzone"></div>
+      <div class="modal-voti" id="modalVoti"></div>
+    </div>
+  </div>
 
-const top5Info = {
-  1:{
-    "ARISA":           {match:true,  nota:"Noi 8 — piena concordanza con la sala stampa!"},
-    "FULMINACCI":      {match:true,  nota:"Noi 6 giallo — voto in crescita, la stampa concorda"},
-    "SERENA BRANCALE": {match:true,  nota:"Noi 6 giallo — voto in crescita, la stampa concorda"},
-    "DITONELLAPIAGA":  {match:false, nota:"Noi 5 rosso — divergenza netta con la stampa!"},
-    "FEDEZ & MASINI":  {match:false, nota:"Noi 5 rosso — divergenza netta con la stampa!"},
-  }
-};
+  <script src="app.js"></script>
 
-const serate = [
-  {n:1,label:"1ª Serata",data:"Martedì 24 Feb"},
-  {n:2,label:"2ª Serata",data:"Mercoledì 25 Feb"},
-  {n:3,label:"3ª Serata",data:"Giovedì 26 Feb"},
-  {n:4,label:"4ª Serata",data:"Venerdì 27 Feb"},
-  {n:5,label:"5ª Serata",data:"Sabato 28 Feb"},
-];
-
-let currentSerata = 1;
-let showTop5 = false;
-
-function cc(c) {
-  return {rosso:'voto-rosso','verde-chiaro':'voto-verde-chiaro',verde:'voto-verde',grigio:'voto-grigio',giallo:'voto-giallo'}[c]||'voto-nd';
-}
-
-function renderNav() {
-  document.getElementById('serateNav').innerHTML =
-    serate.map(s=>`<button class="serata-btn ${!showTop5&&currentSerata===s.n?'active':''}" onclick="selectSerata(${s.n})">${s.label}</button>`).join('')+
-    `<button class="top5-btn ${showTop5?'active':''}" onclick="toggleTop5()">🏆 Top 5 Serate</button>`;
-}
-
-function renderTitle() {
-  const s=serate[currentSerata-1];
-  document.getElementById('serataTitle').innerHTML=showTop5?'':
-    `<h2><span>${s.label}</span> — ${s.data}</h2><p>Valutazioni medie della nostra giuria</p>`;
-}
-
-function renderGrid() {
-  const grid=document.getElementById('cantantiGrid');
-  if(showTop5){grid.innerHTML='';return;}
-  grid.innerHTML=cantanti.map((c,i)=>{
-    const vd=voti[c.num]&&voti[c.num][currentSerata];
-    const badge=vd?`<div class="voto-badge ${cc(vd.c)}">${vd.v}</div>`:`<div class="voto-badge voto-nd">–</div>`;
-    const m=c.migliore&&currentSerata===1;
-    return `<div class="cantante-card ${m?'migliore':''} ${!vd?'no-voto':''}" style="animation-delay:${i*0.03}s" onclick="openModal(${c.num})">
-      <div class="num-badge">${c.num}</div>
-      <div class="cantante-info">
-        <div class="cantante-nome ${m?'migliore-testo':''}">${c.nome}</div>
-        <div class="cantante-canzone">${c.canzone}</div>
-      </div>${badge}</div>`;
-  }).join('');
-}
-
-function renderTop5() {
-  const section=document.getElementById('top5Section');
-  if(!showTop5){section.style.display='none';return;}
-  section.style.display='block';
-  section.innerHTML=`
-    <div class="top5-header"><h2>Top <span>5</span></h2><p>Sala stampa Sanremo • Confronto con il nostro voto</p></div>
-    ${serate.map(s=>{
-      const items=top5[s.n], info=top5Info[s.n]||{};
-      return `<div class="top5-serata">
-        <div class="top5-serata-title">🎤 ${s.label} — ${s.data}</div>
-        <div class="top5-items">
-          ${items.length>0?items.map((nome,i)=>{
-            const d=info[nome];
-            return `<div class="top5-item" style="animation-delay:${i*0.06}s">
-              <div class="top5-rank">${i+1}</div>
-              <div class="top5-nome">${nome}</div>
-              ${d?`<div class="top5-item-meta">
-                <span class="match-pill ${d.match?'match-yes':'match-no'}">${d.match?'✓ Concordiamo':'✗ Divergiamo'}</span>
-                <span class="top5-nota">${d.nota}</span>
-              </div>`:''}
-            </div>`;
-          }).join(''):`<div class="top5-item nd"><div class="top5-rank" style="color:rgba(255,255,255,0.15)">—</div><div class="top5-nome">Dati non ancora disponibili</div></div>`}
-        </div>
-      </div>`;
-    }).join('')}`;
-}
-
-function renderLegenda() {
-  document.getElementById('legenda').style.display=showTop5?'none':'flex';
-}
-
-function render() { renderNav();renderTitle();renderGrid();renderTop5();renderLegenda(); }
-
-function selectSerata(n) { currentSerata=n;showTop5=false;render(); }
-function toggleTop5() { showTop5=!showTop5;render(); }
-
-function openModal(num) {
-  const c=cantanti.find(x=>x.num===num);
-  document.getElementById('modalNome').textContent=c.nome;
-  document.getElementById('modalCanzone').textContent=`"${c.canzone}"`;
-  document.getElementById('modalVoti').innerHTML=serate.map(s=>{
-    const vd=voti[num]&&voti[num][s.n];
-    const badge=vd?`<div class="modal-voto-display ${cc(vd.c)}">${vd.v}</div>`:`<div class="modal-voto-display voto-nd" style="font-size:13px;font-family:Montserrat">–</div>`;
-    return `<div class="modal-voto-row"><span class="modal-serata-label">${s.label} · ${s.data}</span>${badge}</div>`;
-  }).join('');
-  document.getElementById('modalOverlay').classList.add('show');
-}
-
-function closeModal() { document.getElementById('modalOverlay').classList.remove('show'); }
-
-document.getElementById('modalOverlay').addEventListener('click',function(e){if(e.target===this)closeModal();});
-
-render();
-</script>
 </body>
 </html>
