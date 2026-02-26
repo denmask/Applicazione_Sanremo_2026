@@ -57,7 +57,7 @@ function renderGrid() {
     const badge = vd
       ? `<div class="voto-badge ${cc(vd.c)}">${vd.v}</div>`
       : `<div class="voto-badge voto-nd">–</div>`;
-    const m = c.migliore && currentSerata === 1;
+    const m = c.migliore && c.migliore[currentSerata];
 
     return `
       <div class="cantante-card ${m ? 'migliore' : ''} ${!vd ? 'no-voto' : ''}"
