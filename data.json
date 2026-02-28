@@ -83,8 +83,7 @@
       "nome": "SAMURAI JAY",
       "canzone": "Ossessione",
       "migliore": {
-        "3": true,
-        "4": true
+        "3": true
       }
     },
     {
@@ -215,7 +214,8 @@
       "nome": "LDA & AKA 7EVEN",
       "canzone": "Poesie Clandestine",
       "migliore": {
-        "2": true
+        "2": true,
+        "4": true
       }
     }
   ],
@@ -857,8 +857,8 @@
         "nota": "Nei nostri ⭐ — concordiamo con la sala stampa!"
       },
       "LDA & AKA 7EVEN": {
-        "match": false,
-        "nota": "Non nei nostri ⭐ — la stampa lo vede meglio di noi"
+        "match": true,
+        "nota": "Nei nostri ⭐ — concordiamo con la sala stampa!"
       },
       "NAYT": {
         "match": true,
