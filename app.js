@@ -81,15 +81,16 @@ function renderTop5() {
 
   section.innerHTML = `
     <div class="top5-header">
-      <h2>Top <span>5</span></h2>
+      <h2>Top <span>5</span> Serate</h2>
       <p>Sala stampa Sanremo • Confronto con il nostro voto</p>
     </div>
     ${serate.map(s => {
       const items = top5[s.n];
       const info  = top5Info[s.n] || {};
+      const isTop10 = s.n === 4;
       return `
         <div class="top5-serata">
-          <div class="top5-serata-title">🎤 ${s.label} — ${s.data}</div>
+          <div class="top5-serata-title">🎤 ${s.label} — ${s.data}${isTop10 ? ' <span class="top10-badge">TOP 10</span>' : ''}</div>
           <div class="top5-items">
             ${items.length > 0
               ? items.map((nome, i) => {

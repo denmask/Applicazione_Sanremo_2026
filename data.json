@@ -4,7 +4,9 @@
       "num": 1,
       "nome": "DITONELLAPIAGA",
       "canzone": "Che fastidio!",
-      "migliore": {}
+      "migliore": {
+        "4": true
+      }
     },
     {
       "num": 2,
@@ -18,7 +20,8 @@
       "canzone": "Tu mi piaci tanto",
       "migliore": {
         "1": true,
-        "3": true
+        "3": true,
+        "4": true
       }
     },
     {
@@ -27,7 +30,8 @@
       "canzone": "Le cose che non sai di me",
       "migliore": {
         "1": true,
-        "3": true
+        "3": true,
+        "4": true
       }
     },
     {
@@ -42,7 +46,8 @@
       "canzone": "Magica Favola",
       "migliore": {
         "1": true,
-        "3": true
+        "3": true,
+        "4": true
       }
     },
     {
@@ -63,7 +68,8 @@
       "canzone": "Voilà",
       "migliore": {
         "1": true,
-        "2": true
+        "2": true,
+        "4": true
       }
     },
     {
@@ -77,7 +83,8 @@
       "nome": "SAMURAI JAY",
       "canzone": "Ossessione",
       "migliore": {
-        "3": true
+        "3": true,
+        "4": true
       }
     },
     {
@@ -131,14 +138,17 @@
       "nome": "NAYT",
       "canzone": "Prima che",
       "migliore": {
-        "2": true
+        "2": true,
+        "4": true
       }
     },
     {
       "num": 20,
       "nome": "MALIKA AYANE",
       "canzone": "Animali notturni",
-      "migliore": {}
+      "migliore": {
+        "4": true
+      }
     },
     {
       "num": 21,
@@ -152,7 +162,8 @@
       "canzone": "Per sempre sì",
       "migliore": {
         "1": true,
-        "3": true
+        "3": true,
+        "4": true
       }
     },
     {
@@ -165,7 +176,9 @@
       "num": 24,
       "nome": "TREDICI PIETRO",
       "canzone": "Uomo che cade",
-      "migliore": {}
+      "migliore": {
+        "4": true
+      }
     },
     {
       "num": 25,
@@ -244,7 +257,10 @@
         "c": "rosso"
       },
       "3": null,
-      "4": null,
+      "4": {
+        "v": 6,
+        "c": "grigio"
+      },
       "5": null
     },
     "2": {
@@ -257,20 +273,26 @@
         "v": 4,
         "c": "rosso"
       },
-      "4": null,
+      "4": {
+        "v": 5,
+        "c": "rosso"
+      },
       "5": null
     },
     "3": {
       "1": {
         "v": 7,
-        "c": "verde-chiaro"
+        "c": "verde"
       },
       "2": null,
       "3": {
         "v": 7,
         "c": "verde"
       },
-      "4": null,
+      "4": {
+        "v": 6,
+        "c": "verde-chiaro"
+      },
       "5": null
     },
     "4": {
@@ -283,7 +305,10 @@
         "v": 6,
         "c": "grigio"
       },
-      "4": null,
+      "4": {
+        "v": 7,
+        "c": "verde"
+      },
       "5": null
     },
     "5": {
@@ -296,7 +321,10 @@
         "c": "giallo"
       },
       "3": null,
-      "4": null,
+      "4": {
+        "v": 5,
+        "c": "rosso"
+      },
       "5": null
     },
     "6": {
@@ -309,7 +337,10 @@
         "v": 7,
         "c": "verde"
       },
-      "4": null,
+      "4": {
+        "v": 8,
+        "c": "verde"
+      },
       "5": null
     },
     "7": {
@@ -322,20 +353,26 @@
         "v": 5,
         "c": "rosso"
       },
-      "4": null,
+      "4": {
+        "v": 5,
+        "c": "rosso"
+      },
       "5": null
     },
     "8": {
       "1": {
         "v": 6,
-        "c": "verde"
+        "c": "giallo"
       },
       "2": {
         "v": 6,
         "c": "giallo"
       },
       "3": null,
-      "4": null,
+      "4": {
+        "v": 4,
+        "c": "rosso"
+      },
       "5": null
     },
     "9": {
@@ -345,10 +382,13 @@
       },
       "2": {
         "v": 7,
-        "c": "grigio"
+        "c": "verde"
       },
       "3": null,
-      "4": null,
+      "4": {
+        "v": 6,
+        "c": "grigio"
+      },
       "5": null
     },
     "10": {
@@ -361,7 +401,10 @@
         "c": "rosso"
       },
       "3": null,
-      "4": null,
+      "4": {
+        "v": 4,
+        "c": "rosso"
+      },
       "5": null
     },
     "11": {
@@ -374,7 +417,10 @@
         "v": 7,
         "c": "verde"
       },
-      "4": null,
+      "4": {
+        "v": 6,
+        "c": "grigio"
+      },
       "5": null
     },
     "12": {
@@ -387,20 +433,26 @@
         "v": 5,
         "c": "rosso"
       },
-      "4": null,
+      "4": {
+        "v": 6,
+        "c": "grigio"
+      },
       "5": null
     },
     "13": {
       "1": {
         "v": 7,
-        "c": "verde-chiaro"
+        "c": "verde"
       },
       "2": {
         "v": 6,
         "c": "grigio"
       },
       "3": null,
-      "4": null,
+      "4": {
+        "v": 5,
+        "c": "rosso"
+      },
       "5": null
     },
     "14": {
@@ -413,7 +465,10 @@
         "c": "grigio"
       },
       "3": null,
-      "4": null,
+      "4": {
+        "v": 5,
+        "c": "rosso"
+      },
       "5": null
     },
     "15": {
@@ -426,7 +481,10 @@
         "c": "rosso"
       },
       "3": null,
-      "4": null,
+      "4": {
+        "v": 6,
+        "c": "grigio"
+      },
       "5": null
     },
     "16": {
@@ -439,7 +497,10 @@
         "c": "verde"
       },
       "3": null,
-      "4": null,
+      "4": {
+        "v": 5,
+        "c": "rosso"
+      },
       "5": null
     },
     "17": {
@@ -452,7 +513,10 @@
         "c": "grigio"
       },
       "3": null,
-      "4": null,
+      "4": {
+        "v": 5,
+        "c": "rosso"
+      },
       "5": null
     },
     "18": {
@@ -465,7 +529,10 @@
         "v": 6,
         "c": "grigio"
       },
-      "4": null,
+      "4": {
+        "v": 6,
+        "c": "grigio"
+      },
       "5": null
     },
     "19": {
@@ -478,7 +545,10 @@
         "c": "grigio"
       },
       "3": null,
-      "4": null,
+      "4": {
+        "v": 6,
+        "c": "grigio"
+      },
       "5": null
     },
     "20": {
@@ -491,7 +561,10 @@
         "v": 6,
         "c": "grigio"
       },
-      "4": null,
+      "4": {
+        "v": 6,
+        "c": "verde-chiaro"
+      },
       "5": null
     },
     "21": {
@@ -504,20 +577,26 @@
         "v": 5,
         "c": "rosso"
       },
-      "4": null,
+      "4": {
+        "v": 6,
+        "c": "giallo"
+      },
       "5": null
     },
     "22": {
       "1": {
         "v": 7,
-        "c": "verde-chiaro"
+        "c": "verde"
       },
       "2": null,
       "3": {
         "v": 6,
         "c": "grigio"
       },
-      "4": null,
+      "4": {
+        "v": 6,
+        "c": "grigio"
+      },
       "5": null
     },
     "23": {
@@ -530,7 +609,10 @@
         "c": "rosso"
       },
       "3": null,
-      "4": null,
+      "4": {
+        "v": 6,
+        "c": "giallo"
+      },
       "5": null
     },
     "24": {
@@ -543,7 +625,10 @@
         "v": 5,
         "c": "rosso"
       },
-      "4": null,
+      "4": {
+        "v": 6,
+        "c": "grigio"
+      },
       "5": null
     },
     "25": {
@@ -556,20 +641,26 @@
         "c": "giallo"
       },
       "3": null,
-      "4": null,
+      "4": {
+        "v": 5,
+        "c": "rosso"
+      },
       "5": null
     },
     "26": {
       "1": {
         "v": 7,
-        "c": "verde-chiaro"
+        "c": "verde"
       },
       "2": {
         "v": 6,
         "c": "grigio"
       },
       "3": null,
-      "4": null,
+      "4": {
+        "v": 6,
+        "c": "grigio"
+      },
       "5": null
     },
     "27": {
@@ -582,7 +673,10 @@
         "v": 5,
         "c": "rosso"
       },
-      "4": null,
+      "4": {
+        "v": 5,
+        "c": "rosso"
+      },
       "5": null
     },
     "28": {
@@ -595,7 +689,10 @@
         "v": 5,
         "c": "rosso"
       },
-      "4": null,
+      "4": {
+        "v": 4,
+        "c": "rosso"
+      },
       "5": null
     },
     "29": {
@@ -608,7 +705,10 @@
         "v": 6,
         "c": "grigio"
       },
-      "4": null,
+      "4": {
+        "v": 5,
+        "c": "rosso"
+      },
       "5": null
     },
     "30": {
@@ -621,7 +721,10 @@
         "c": "grigio"
       },
       "3": null,
-      "4": null,
+      "4": {
+        "v": 6,
+        "c": "grigio"
+      },
       "5": null
     }
   },
@@ -647,7 +750,18 @@
       "SAL DA VINCI",
       "LUCHÉ"
     ],
-    "4": [],
+    "4": [
+      "DITONELLAPIAGA",
+      "SAYF",
+      "ARISA",
+      "BAMBOLE DI PEZZA",
+      "TREDICI PIETRO",
+      "SAL DA VINCI",
+      "LDA & AKA 7EVEN",
+      "NAYT",
+      "DARGEN D'AMICO",
+      "LUCHÉ"
+    ],
     "5": []
   },
   "top5Info": {
@@ -715,6 +829,48 @@
       "LUCHÉ": {
         "match": false,
         "nota": "Non nei nostri ⭐ — divergiamo dalla sala stampa"
+      }
+    },
+    "4": {
+      "DITONELLAPIAGA": {
+        "match": true,
+        "nota": "Nei nostri ⭐ — concordiamo con la sala stampa!"
+      },
+      "SAYF": {
+        "match": true,
+        "nota": "Nei nostri ⭐ — concordiamo con la sala stampa!"
+      },
+      "ARISA": {
+        "match": true,
+        "nota": "Nei nostri ⭐ — concordiamo con la sala stampa!"
+      },
+      "BAMBOLE DI PEZZA": {
+        "match": false,
+        "nota": "Non nei nostri ⭐ — la stampa lo vede meglio di noi"
+      },
+      "TREDICI PIETRO": {
+        "match": true,
+        "nota": "Nei nostri ⭐ — concordiamo con la sala stampa!"
+      },
+      "SAL DA VINCI": {
+        "match": true,
+        "nota": "Nei nostri ⭐ — concordiamo con la sala stampa!"
+      },
+      "LDA & AKA 7EVEN": {
+        "match": false,
+        "nota": "Non nei nostri ⭐ — la stampa lo vede meglio di noi"
+      },
+      "NAYT": {
+        "match": true,
+        "nota": "Nei nostri ⭐ — concordiamo con la sala stampa!"
+      },
+      "DARGEN D'AMICO": {
+        "match": false,
+        "nota": "Non nei nostri ⭐ — la stampa lo vede meglio di noi"
+      },
+      "LUCHÉ": {
+        "match": false,
+        "nota": "Non nei nostri ⭐ — la stampa lo vede meglio di noi"
       }
     }
   }
