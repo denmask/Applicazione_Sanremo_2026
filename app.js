@@ -3,19 +3,22 @@ let serate = [];
 let voti = {};
 let top5 = {};
 let top5Info = {};
+let classificaFinale = [];
 
 let currentSerata = 1;
 let showTop5 = false;
+let showClassifica = false;
 
 /* ── INIT ── */
 fetch('data.json')
   .then(r => r.json())
   .then(data => {
-    cantanti  = data.cantanti;
-    serate    = data.serate;
-    voti      = data.voti;
-    top5      = data.top5;
-    top5Info  = data.top5Info;
+    cantanti        = data.cantanti;
+    serate          = data.serate;
+    voti            = data.voti;
+    top5            = data.top5;
+    top5Info        = data.top5Info;
+    classificaFinale = data.classificaFinale || [];
     render();
   });
 
@@ -34,23 +37,24 @@ function cc(c) {
 function renderNav() {
   document.getElementById('serateNav').innerHTML =
     serate.map(s =>
-      `<button class="serata-btn ${!showTop5 && currentSerata === s.n ? 'active' : ''}"
+      `<button class="serata-btn ${!showTop5 && !showClassifica && currentSerata === s.n ? 'active' : ''}"
                onclick="selectSerata(${s.n})">${s.label}</button>`
     ).join('') +
-    `<button class="top5-btn ${showTop5 ? 'active' : ''}" onclick="toggleTop5()">🏆 Top 5 Serate</button>`;
+    `<button class="top5-btn ${showTop5 ? 'active' : ''}" onclick="toggleTop5()">🏆 Top 5 Serate</button>` +
+    `<button class="classifica-btn ${showClassifica ? 'active' : ''}" onclick="toggleClassifica()">🎖️ Classifica Finale</button>`;
 }
 
 /* ── RENDER TITLE ── */
 function renderTitle() {
   const s = serate[currentSerata - 1];
-  document.getElementById('serataTitle').innerHTML = showTop5 ? '' :
+  document.getElementById('serataTitle').innerHTML = (showTop5 || showClassifica) ? '' :
     `<h2><span>${s.label}</span> — ${s.data}</h2><p>Valutazioni medie della nostra giuria</p>`;
 }
 
 /* ── RENDER GRID ── */
 function renderGrid() {
   const grid = document.getElementById('cantantiGrid');
-  if (showTop5) { grid.innerHTML = ''; return; }
+  if (showTop5 || showClassifica) { grid.innerHTML = ''; return; }
 
   grid.innerHTML = cantanti.map((c, i) => {
     const vd    = voti[c.num] && voti[c.num][currentSerata];
@@ -118,9 +122,51 @@ function renderTop5() {
     }).join('')}`;
 }
 
+/* ── RENDER CLASSIFICA ── */
+function renderClassifica() {
+  const section = document.getElementById('classificaSection');
+  if (!showClassifica) { section.style.display = 'none'; return; }
+  section.style.display = 'block';
+
+  const medalIcons = { 1: '🥇', 2: '🥈', 3: '🥉' };
+
+  section.innerHTML = `
+    <div class="top5-header">
+      <h2>Classifica <span>Finale</span></h2>
+      <p>76° Festival di Sanremo 2026 • Classifica ufficiale</p>
+    </div>
+    <div class="classifica-items">
+      ${classificaFinale.map(item => {
+        const cantante = cantanti.find(c => c.nome === item.nome);
+        const votoMedio = cantante ? calcolaMedia(cantante.num) : null;
+        const medal = medalIcons[item.pos] || '';
+        const topClass = item.pos <= 3 ? 'classifica-podio' : item.pos <= 10 ? 'classifica-top10' : '';
+        return `
+          <div class="classifica-item ${topClass}" style="animation-delay:${(item.pos-1) * 0.03}s">
+            <div class="classifica-rank">${medal || item.pos}</div>
+            <div class="classifica-info">
+              <div class="classifica-nome">${item.nome}</div>
+              <div class="classifica-canzone">${item.canzone}</div>
+            </div>
+          </div>`;
+      }).join('')}
+    </div>`;
+}
+
+function calcolaMedia(num) {
+  const v = voti[num];
+  if (!v) return null;
+  const valori = Object.values(v).filter(x => x !== null).map(x => x.v);
+  if (!valori.length) return null;
+  return (valori.reduce((a, b) => a + b, 0) / valori.length).toFixed(1);
+}
+
 /* ── RENDER LEGENDA ── */
 function renderLegenda() {
-  document.getElementById('legenda').style.display = showTop5 ? 'none' : 'flex';
+  const legenda = document.getElementById('legenda');
+  legenda.style.display = (showTop5 || showClassifica) ? 'none' : 'flex';
+  const leg5 = document.getElementById('legenda5note');
+  if (leg5) leg5.style.display = currentSerata === 5 ? 'flex' : 'none';
 }
 
 /* ── RENDER ALL ── */
@@ -129,6 +175,7 @@ function render() {
   renderTitle();
   renderGrid();
   renderTop5();
+  renderClassifica();
   renderLegenda();
 }
 
@@ -136,11 +183,19 @@ function render() {
 function selectSerata(n) {
   currentSerata = n;
   showTop5 = false;
+  showClassifica = false;
   render();
 }
 
 function toggleTop5() {
   showTop5 = !showTop5;
+  showClassifica = false;
+  render();
+}
+
+function toggleClassifica() {
+  showClassifica = !showClassifica;
+  showTop5 = false;
   render();
 }
 
